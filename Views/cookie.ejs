@@ -1,0 +1,42 @@
+<%- include('partials/header') %>
+
+<div class="container mt-5 text-center">
+
+    <h2 class="fw-bold mb-4">Cookie Preferences</h2>
+
+    <div class="card shadow-sm p-4 mx-auto" style="max-width: 400px;">
+
+        <p class="mb-2">
+            Theme:
+            <strong><%= theme || "Not set" %></strong>
+        </p>
+
+        <p class="mb-3">
+            Language:
+            <strong><%= language || "Not set" %></strong>
+        </p>
+
+        <a href="/cookie/set-dark" class="btn btn-dark w-100 mb-2">
+            Dark Theme
+        </a>
+
+        <a href="/cookie/set-light" class="btn btn-outline-dark w-100 mb-3">
+            Light Theme
+        </a>
+
+        <a href="/cookie/set-en" class="btn btn-primary w-100 mb-2">
+            English
+        </a>
+
+        <a href="/cookie/set-ar" class="btn btn-secondary w-100 mb-3">
+            Arabic
+        </a>
+
+        <a href="/cookie" class="btn btn-outline-secondary w-100">
+            Refresh
+        </a>
+
+    </div>
+</div>
+
+<%- include('partials/footer') %>

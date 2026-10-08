@@ -1,0 +1,38 @@
+<%- include('partials/header') %>
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 shadow p-4 rounded bg-light">
+            <h2 class="text-center mb-4">Booking </h2>
+            
+            <form action="/submit" method="POST">
+                <div class="mb-3">
+                    <label class="form-label font-weight-bold">Book a class...</label>
+                    <select name="title" class="form-select" required>
+                        <option value="" selected disabled>choose from the list..</option>
+                        <option value="Bodybuilding">Bodybuilding</option>
+                        <option value="HIIT Workout">HIIT Workout</option>
+                        <option value="Cardio">Cardio</option>
+                        <option value="Yoga">Yoga</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Time & Date </label>
+                    <input type="date" name="bookingDate" class="form-control" required>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Anything else?  </label>
+                    <textarea name="content" class="form-control" rows="4" placeholder="Text area..."></textarea>
+                </div>
+
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-dark btn-lg">Book Now </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include('partials/footer') %>

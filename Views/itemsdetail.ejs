@@ -1,0 +1,83 @@
+<%- include('partials/header') %>
+
+<div class="container my-5 px-4">
+    <nav aria-label="breadcrumb" class="mb-4">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/items" class="text-danger text-decoration-none">Equipments</a></li>
+            <li class="breadcrumb-item active" aria-current="page"><%= item.name %></li>
+        </ol>
+    </nav>
+
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card shadow-lg border-0 rounded-4 overflow-hidden">
+                <div class="row g-0">
+                    <div class="col-md-4 bg-dark d-flex align-items-center justify-content-center py-5">
+                        <div class="text-center">
+                            <i class="bi bi-gear-wide-connected text-danger display-1"></i>
+                            <p class="text-white-50 mt-2 small text-uppercase">ID: #<%= item.id %></p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-8">
+                        <div class="card-body p-md-5 p-4">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <div>
+                                    <h1 class="fw-bold text-dark mb-1"><%= item.name %></h1>
+                                    <span class="badge bg-light text-secondary border px-3 py-2">
+                                        <i class="bi bi-tag-fill me-1"></i> <%= item.type %>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <hr class="my-4 opacity-50">
+
+                            <div class="mb-5">
+                                <label class="text-muted small fw-bold text-uppercase d-block mb-2">Live Availability</label>
+                                <% if(item.status === 'Available') { %>
+                                    <div class="d-flex align-items-center">
+                                        <div class="p-3 bg-success-subtle rounded-circle me-3">
+                                            <i class="bi bi-check-circle-fill text-success fs-2"></i>
+                                        </div>
+                                        <div>
+                                            <h3 class="text-success fw-bold mb-0">Ready for Use</h3>
+                                            <p class="text-muted mb-0">This machine is currently free. Come and train!</p>
+                                        </div>
+                                    </div>
+                                <% } else { %>
+                                    <div class="d-flex align-items-center">
+                                        <div class="p-3 bg-danger-subtle rounded-circle me-3">
+                                            <i class="bi bi-person-fill-exclamation text-danger fs-2"></i>
+                                        </div>
+                                        <div>
+                                            <h3 class="text-danger fw-bold mb-0">Currently Occupied</h3>
+                                            <p class="text-muted mb-0">Someone is using this equipment. Estimated wait: 5-10 mins.</p>
+                                        </div>
+                                    </div>
+                                <% } %>
+                            </div>
+
+                            <div class="d-flex gap-3">
+                                <a href="/items" class="btn btn-outline-dark px-4 py-2 fw-bold">
+                                    <i class="bi bi-arrow-left me-1"></i> Back to List
+                                </a>
+                                <button class="btn btn-danger px-4 py-2 fw-bold shadow-sm">
+                                    Report Issue
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-4 p-3 bg-white border-start border-danger border-4 rounded shadow-sm">
+                <p class="mb-0 text-muted small">
+                    <i class="bi bi-info-circle-fill text-danger me-2"></i>
+                    <strong>Safety First:</strong> Always wipe down equipment after use. Check with a trainer if you're unsure how to adjust the <%= item.name %>.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('partials/footer') %>

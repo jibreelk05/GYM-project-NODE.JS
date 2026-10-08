@@ -1,0 +1,44 @@
+<%- include('partials/header') %>
+
+<div class="container my-5">
+    <div class="text-center mb-5">
+        <h1 class="fw-bold text-dark">Our Memberships & Services</h1>
+        <p class="text-muted">Choose the perfect plan to reach your fitness goals</p>
+        <hr class="mx-auto" style="width: 60px; height: 3px; background-color: #ff4d4d; border: none;">
+    </div>
+
+    <div class="row g-4">
+        <% featuresitems.forEach(item => { %>
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0 rounded-3 overflow-hidden">
+                    <div style="height: 5px; background-color: #ff4d4d;"></div>
+                    
+                    <div class="card-body p-4 text-center">
+                        <div class="mb-3">
+                            <i class="bi <%= item.icon %> fs-1 text-danger"></i>
+                        </div>
+
+                        <h4 class="card-title fw-bold mb-3"><%= item.title %></h4>
+                        
+                        <p class="card-text text-secondary mb-4" style="font-size: 0.95rem;">
+                            <%= item.desc %>
+                        </p>
+
+                        <div class="mt-auto pt-3 border-top">
+                            <span class="text-dark fw-bold fs-4"><%= item.price %></span>
+                            <span class="text-muted small">/Month</span>
+                        </div>
+                    </div>
+
+                    <div class="card-footer bg-white border-0 pb-4 px-4">
+                        <button class="btn btn-outline-danger w-100 fw-bold py-2">
+                            Book Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+</div>
+
+<%- include('partials/footer') %>
